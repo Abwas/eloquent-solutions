@@ -1,5 +1,5 @@
 import chai from 'chai';
-import minimum from './03-functions';
+import minimum from './03-01-functions';
 
 const expect = chai.expect;
 
