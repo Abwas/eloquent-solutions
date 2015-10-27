@@ -7,11 +7,24 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha src/**/*.spec.js -w",
-    "test:single": "istanbul cover -x *.spec.js _mocha -- -R spec src/**/*.spec.js",
+    "test": "mocha src/**/*.spec.js -w --compilers js:babel/register",
+    "test:single": "istanbul cover -x *.spec.js _mocha -- -R spec src/**/*.spec.js --compilers js:babel/register",
     "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "report-coverage": "cat ./coverage/lcov.info | codecov"
   },
   "author": "Eric Douglas <eric.douglas.mail@gmail.com> (https://github.com/ericdouglas)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "5.8.29",
+    "chai": "3.4.0",
+    "codecov.io": "0.1.6",
+    "ghooks": "0.3.2",
+    "istanbul": "0.4.0",
+    "mocha": "2.3.3"
+  },
+  "config": {
+    "ghooks": {
+      "pre-commit": "npm run test:single && npm run check-coverage"
+    }
+  }
 }
