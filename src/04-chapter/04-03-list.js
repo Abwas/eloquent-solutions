@@ -21,8 +21,16 @@ function arrayToList(array, list) {
   }
 }
 
-function listToArray(list) {
-  return [10, 20, 30];
+function listToArray(list, array) {
+  let result = array || [];
+
+  result.push(list.value);
+
+  if (list.rest !== null) {
+    return listToArray(list.rest, result);
+  } else {
+    return result;
+  }
 }
 
 function prepend(element, list) {
