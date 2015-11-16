@@ -27,7 +27,7 @@ describe('#Chapter 4 -> Exercise 3 - A List', function() {
       expect(list.nth(list.arrayToList([10, 20, 30]), 1)).to.equal(20);
     });
 
-    it.skip('Should return undefined if there is no element at the given position in the list', function() {
+    it('Should return undefined if there is no element at the given position in the list', function() {
       expect(list.nth(list.arrayToList([10, 20, 30]), 4)).to.be.undefined;
     });
   });

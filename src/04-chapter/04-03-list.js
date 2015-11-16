@@ -43,5 +43,7 @@ function prepend(element, list) {
 }
 
 function nth(list, position) {
-  return 20;
+  let flat = listToArray(list);
+
+  return flat[position];
 }
