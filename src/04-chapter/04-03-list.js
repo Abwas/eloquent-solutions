@@ -34,7 +34,12 @@ function listToArray(list, array) {
 }
 
 function prepend(element, list) {
-  return {value: 10, rest: {value: 20, rest: null}};
+  let result = {};
+
+  result.value = element;
+  result.rest = list;
+
+  return result;
 }
 
 function nth(list, position) {
