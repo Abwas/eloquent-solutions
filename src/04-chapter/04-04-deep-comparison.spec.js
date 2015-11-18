@@ -10,15 +10,19 @@ describe('#Chapter 4 -> Exercise 4 - Deep Comparison', function() {
       expect(deepEqual(obj, obj)).to.be.true;
     });
 
-    it.skip('Should compare objects', function() {
+    it('Should compare objects', function() {
       let obj = {here: {is: "an"}, object: 2};
-      expect(deepEqual(obj, obj)).to.be.true;
       expect(deepEqual(obj, {here: 1, object: 2})).to.be.false;
     });
 
     it('Should compare objects', function() {
       let obj = {here: {is: "an"}, object: 2};
       expect(deepEqual(obj, {here: {is: "an"}, object: 2})).to.be.true;
+    });
+
+    it('Should compare objects', function() {
+      let obj = {here: {is: "an"}, object: 2};
+      expect(deepEqual(obj, {here: 1, object: 2, different: true})).to.be.false;
     });
   });
 });
