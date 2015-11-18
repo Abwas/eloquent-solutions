@@ -16,8 +16,6 @@ function compareObjects(obj1, obj2) {
 
       if (!result) {
         return result;
-      } else {
-      
       }
     }
   }
